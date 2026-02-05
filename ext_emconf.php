@@ -9,10 +9,10 @@ $EM_CONF[$_EXTKEY] = [
     'state'        => 'stable',
     'constraints'  => [
         'depends'  => [
-            'typo3' => '11.5.0-12.4.99',
+            'typo3' => '11.5.0-13.4.99',
         ],
         'suggests' => [
-            'spreadsheets' => '3.3.0-4.99.99',
+            'spreadsheets' => '3.3.0-5.99.99',
         ],
     ],
     'autoload'     => [
