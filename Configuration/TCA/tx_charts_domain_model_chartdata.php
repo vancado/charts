@@ -61,12 +61,12 @@ return (static function (string $extKey = 'charts') {
             ],
         ],
         'columns' => [
-            'sys_language_uid' => $GLOBALS['TCA']['tt_content']['columns']['sys_language_uid'],
-            'l10n_parent' => $GLOBALS['TCA']['tt_content']['columns']['l18n_parent'],
-            'l10n_diffsource' => $GLOBALS['TCA']['tt_content']['columns']['l18n_diffsource'],
-            'hidden' => $GLOBALS['TCA']['tt_content']['columns']['hidden'],
-            'starttime' => $GLOBALS['TCA']['tt_content']['columns']['starttime'],
-            'endtime' => $GLOBALS['TCA']['tt_content']['columns']['endtime'],
+            'sys_language_uid' => $GLOBALS['TCA']['tt_content']['columns']['sys_language_uid'] ?? [],
+            'l10n_parent' => $GLOBALS['TCA']['tt_content']['columns']['l18n_parent'] ?? [],
+            'l10n_diffsource' => $GLOBALS['TCA']['tt_content']['columns']['l18n_diffsource'] ?? [],
+            'hidden' => $GLOBALS['TCA']['tt_content']['columns']['hidden'] ?? [],
+            'starttime' => $GLOBALS['TCA']['tt_content']['columns']['starttime'] ?? [],
+            'endtime' => $GLOBALS['TCA']['tt_content']['columns']['endtime'] ? [],
             'title' => [
                 'exclude' => true,
                 'label' => $ll . '.title',
