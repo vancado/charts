@@ -45,10 +45,10 @@ class ColorPaletteInputElement extends AbstractFormElement
             'LLL:EXT:charts/Resources/Private/Language/locallang_db.xlf:color_palette.newButton'
         );
 
+        $resultArray['javaScriptModules'][] = JavaScriptModuleInstruction::create(
+            '@hoogi91/charts/color-palette-input-element.js',
+        )->instance($inputIdentifier);
 
-        $resultArray['requireJsModules'] = [JavaScriptModuleInstruction::forRequireJS(
-            'TYPO3/CMS/Charts/ColorPaletteInputElement'
-        )];
         $resultArray['html'] = <<<HTML
 <div class="formengine-field-item t3js-formengine-field-item">
     {$this->renderFieldInformation()['html']}

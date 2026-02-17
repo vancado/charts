@@ -40,4 +40,8 @@ defined('TYPO3') or die();
             ['source' => sprintf('EXT:%s/Resources/Public/Icons/%s.svg', $extKey, $icon)]
         );
     }
+
+    // Add css to backend
+    $GLOBALS['TYPO3_CONF_VARS']['BE']['stylesheets']['charts'] =
+        'EXT:charts/Resources/Public/Css/Backend/ColorPaletteInputElement.css';
 })();

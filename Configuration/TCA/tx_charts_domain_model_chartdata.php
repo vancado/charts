@@ -54,7 +54,7 @@ return (static function (string $extKey = 'charts') {
         ],
         'palettes' => [
             'corePalette' => [
-                'showitem' => 'title, sys_language_uid, l10n_parent, l10n_diffsource',
+                'showitem' => 'title, sys_language_uid',
             ],
             'datasetPalette' => [
                 'showitem' => 'datasets, datasets_labels',
@@ -67,9 +67,41 @@ return (static function (string $extKey = 'charts') {
             'sys_language_uid' => $GLOBALS['TCA']['tt_content']['columns']['sys_language_uid'] ?? [],
             'l10n_parent' => $GLOBALS['TCA']['tt_content']['columns']['l18n_parent'] ?? [],
             'l10n_diffsource' => $GLOBALS['TCA']['tt_content']['columns']['l18n_diffsource'] ?? [],
-            'hidden' => $GLOBALS['TCA']['tt_content']['columns']['hidden'] ?? [],
-            'starttime' => $GLOBALS['TCA']['tt_content']['columns']['starttime'] ?? [],
-            'endtime' => $GLOBALS['TCA']['tt_content']['columns']['endtime'] ?? [],
+            'hidden' => [
+                'exclude' => 1,
+                'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
+                'config' => [
+                    'type' => 'check',
+                    'renderType' => 'checkboxToggle',
+                    'default' => 0,
+                ]
+            ],
+            'starttime' => [
+                'exclude' => 1,
+                'l10n_mode' => 'mergeIfNotBlank',
+                'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:starttime_formlabel',
+                'config' => [
+                    'type' => 'datetime',
+                    'size' => 16,
+                    'default' => 0,
+                    'behaviour' => [
+                        'allowLanguageSynchronization' => true,
+                    ],
+                ]
+            ],
+            'endtime' => [
+                'exclude' => 1,
+                'l10n_mode' => 'mergeIfNotBlank',
+                'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:endtime_formlabel',
+                'config' => [
+                    'type' => 'datetime',
+                    'size' => 16,
+                    'default' => 0,
+                    'behaviour' => [
+                        'allowLanguageSynchronization' => true,
+                    ],
+                ]
+            ],
             'title' => [
                 'exclude' => true,
                 'label' => $ll . '.title',
