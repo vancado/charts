@@ -1,0 +1,22 @@
+name: VANCADO Dependency Update
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to commit updates to'
+        required: true
+        type: string
+      base:
+        description: 'Base branch to merge into after update'
+        required: false
+        default: 'develop'
+        type: string
+
+jobs:
+  update:
+    uses: vancado/workflows/.github/workflows/vancado.update.yml@master
+    with:
+      branch: ${{ inputs.branch }}
+      base:   ${{ inputs.base }}
+    secrets: inherit
