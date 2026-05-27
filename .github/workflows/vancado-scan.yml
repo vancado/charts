@@ -1,0 +1,9 @@
+name: VANCADO Dependency Scan
+
+on:
+  workflow_dispatch:
+
+jobs:
+  scan:
+    uses: vancado/workflows/.github/workflows/vancado.scan.yml@master
+    secrets: inherit
